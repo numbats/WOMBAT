@@ -1,0 +1,24 @@
+# Configuration for the WOMBAT event archive.
+#
+# `active` names the event year that is additionally published at the site
+# root (in addition to its own /<year>/ subfolder), so the current event is
+# what visitors land on at https://numbats.github.io/WOMBAT/.
+#
+# Each entry under `events` becomes a git submodule at /<year>/ on the
+# gh-pages branch, tracking `branch` of `repo`. Add a new year by adding an
+# entry here and updating `active`; the update-gh-pages workflow (or the
+# scripts in scripts/) takes care of wiring up the submodule.
+active: 2026
+
+events:
+  2026:
+    repo: numbats/WOMBAT2026
+    branch: gh-pages
+  2025:
+    repo: numbats/WOMBAT2025
+    branch: gh-pages
+  2024:
+    repo: numbats/WOMBAT2024
+    # WOMBAT2024 publishes its site from `main` rather than `gh-pages`.
+    # If it ever grows a gh-pages branch, switch this to match the others.
+    branch: main

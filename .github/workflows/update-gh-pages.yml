@@ -1,0 +1,89 @@
+name: Update gh-pages aggregation
+
+# Keeps the gh-pages branch's submodules (one per year, from
+# wombat-events.yml) in sync with their source repos, and republishes the
+# active year at the site root.
+#
+# Triggers:
+#   - repository_dispatch from a source repo's own workflow, sent right
+#     after it pushes to its gh-pages (or main) branch. See
+#     docs/source-repo-workflow.yml for the workflow to add there.
+#   - a scheduled poll, as a fallback in case a dispatch is missed or a
+#     source repo hasn't been wired up to send one yet.
+#   - workflow_dispatch, for a manual run.
+#   - push to main touching wombat-events.yml, so config changes (e.g.
+#     bumping `active`, adding a new year) take effect immediately.
+on:
+  repository_dispatch:
+    types: [gh-pages-updated]
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - wombat-events.yml
+      - scripts/**
+      - .github/workflows/update-gh-pages.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages-aggregation
+  cancel-in-progress: false
+
+jobs:
+  aggregate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (config + scripts)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: site
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Reconcile submodules with wombat-events.yml
+        working-directory: site
+        run: python ../main/scripts/sync_config.py ../main/wombat-events.yml
+
+      - name: Fetch latest submodule commits
+        working-directory: site
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --remote --recursive
+
+      - name: Publish active year at site root
+        working-directory: site
+        run: python ../main/scripts/publish_root.py ../main/wombat-events.yml
+
+      - name: Commit and push if changed
+        working-directory: site
+        run: |
+          git config user.name "wombat-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing to publish -- already up to date."
+          else
+            git commit -m "Sync WOMBAT event submodules
+
+          Triggered by: ${{ github.event_name }}${{ github.event.client_payload.repo && format(' from {0}', github.event.client_payload.repo) || '' }}"
+            git push origin HEAD:gh-pages
+          fi

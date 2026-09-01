@@ -1,0 +1,33 @@
+# Template workflow for a WOMBAT event repo (e.g. numbats/WOMBAT2026).
+#
+# Add this as .github/workflows/notify-wombat-hub.yml in the event repo so
+# that publishing to its gh-pages branch immediately tells numbats/WOMBAT to
+# resync (rather than waiting for the hub's ~6-hourly fallback poll).
+#
+# Setup (once per event repo):
+#   1. Create a token that can dispatch to numbats/WOMBAT -- a fine-grained
+#      PAT scoped only to that repo with "Contents: read and write" is
+#      enough. Classic PATs need the `repo` scope.
+#   2. Add it as a secret named WOMBAT_HUB_TOKEN in *this* repo's settings
+#      (Settings -> Secrets and variables -> Actions), e.g.:
+#        gh secret set WOMBAT_HUB_TOKEN --repo numbats/WOMBAT2026
+#   3. Copy this file to .github/workflows/notify-wombat-hub.yml, adjusting
+#      `branches:` below if this repo doesn't publish from gh-pages.
+name: Notify WOMBAT hub
+
+on:
+  push:
+    branches: [gh-pages]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch update to numbats/WOMBAT
+        env:
+          GH_TOKEN: ${{ secrets.WOMBAT_HUB_TOKEN }}
+        run: |
+          gh api repos/numbats/WOMBAT/dispatches \
+            -f event_type=gh-pages-updated \
+            -f "client_payload[repo]=${{ github.repository }}" \
+            -f "client_payload[sha]=${{ github.sha }}"
