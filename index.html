@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="WOMBAT 2026 is the annual data science and analytics workshop run by the Monash Business Analytics Team, 30 Nov – 1 Dec 2026 in Melbourne, Australia.">
+
+<title>Data Science &amp; Analytics Workshop – WOMBAT 2026</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="./img/wombat/wombat-pixelart.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-189d75a199248a8926b730c4f763c3c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-189d75a199248a8926b730c4f763c3c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-189d75a199248a8926b730c4f763c3c4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-home-d1-reproducibility .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-time','listing-speakerlist','listing-room','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-pagetitle","listing-date","listing-time","listing-title","listing-description","listing-speaker","listing-speakerlist","listing-room","listing-image","listing-slides_url","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-home-d1-reproducibility'] = new List('listing-home-d1-reproducibility', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-home-d1-publishing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-time','listing-speakerlist','listing-room','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-pagetitle","listing-date","listing-time","listing-title","listing-description","listing-speaker","listing-speakerlist","listing-room","listing-image","listing-slides_url","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-home-d1-publishing'] = new List('listing-home-d1-publishing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-home-d1-analysis .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-time','listing-speakerlist','listing-room','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-pagetitle","listing-date","listing-time","listing-title","listing-description","listing-speaker","listing-speakerlist","listing-room","listing-image","listing-slides_url","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-home-d1-analysis'] = new List('listing-home-d1-analysis', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-home-d1-development .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-time','listing-speakerlist','listing-room','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-pagetitle","listing-date","listing-time","listing-title","listing-description","listing-speaker","listing-speakerlist","listing-room","listing-image","listing-slides_url","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-home-d1-development'] = new List('listing-home-d1-development', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-home-d2-timeseries .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-time','listing-speakerlist','listing-room','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-pagetitle","listing-date","listing-time","listing-title","listing-description","listing-speaker","listing-speakerlist","listing-room","listing-image","listing-slides_url","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-home-d2-timeseries'] = new List('listing-home-d2-timeseries', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-home-d2-showcase .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-time','listing-speakerlist','listing-room','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-pagetitle","listing-date","listing-time","listing-title","listing-description","listing-speaker","listing-speakerlist","listing-room","listing-image","listing-slides_url","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-home-d2-showcase'] = new List('listing-home-d2-showcase', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-home-d2-ai .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-time','listing-speakerlist','listing-room','listing-image',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-format","listing-engines","listing-language","listing-pagetitle","listing-date","listing-time","listing-title","listing-description","listing-speaker","listing-speakerlist","listing-room","listing-image","listing-slides_url","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-home-d2-ai'] = new List('listing-home-d2-ai', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "WOMBAT 2026",
+  "alternateName": "Workshop Organised by the Monash Business Analytics Team",
+  "description": "WOMBAT 2026 is the annual data science and analytics workshop run by the Monash Business Analytics Team, 30 Nov – 1 Dec 2026 in Melbourne, Australia.",
+  "startDate": "2026-11-30",
+  "endDate": "2026-12-01",
+  "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Melbourne, Australia",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Melbourne",
+      "addressRegion": "VIC",
+      "addressCountry": "AU"
+    }
+  },
+  "image": [
+    "https://wombat2026.numbat.space/img/opengraph-banner.jpg"
+  ],
+  "organizer": {
+    "@type": "Organization",
+    "name": "Monash Business Analytics Team",
+    "url": "https://numbat.space"
+  },
+  "url": "https://wombat2026.numbat.space/",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Day 1 – Tutorials",
+      "url": "https://events.humanitix.com/wombat-2026-day-1-tutorials",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Day 2 – Workshop",
+      "url": "https://events.humanitix.com/wombat-2026-day-2-workshop",
+      "availability": "https://schema.org/InStock"
+    }
+  ]
+}
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/program.css">
+<link rel="stylesheet" href="css/community.css">
+<meta property="og:title" content="WOMBAT 2026 – Data Science &amp; Analytics Workshop">
+<meta property="og:description" content="WOMBAT 2026 is the annual data science and analytics workshop run by the Monash Business Analytics Team, 30 Nov – 1 Dec 2026 in Melbourne, Australia.">
+<meta property="og:image" content="https://wombat2026.numbat.space/img/opengraph-banner.jpg">
+<meta property="og:site_name" content="WOMBAT 2026">
+<meta name="twitter:title" content="WOMBAT 2026 – Data Science &amp; Analytics Workshop">
+<meta name="twitter:description" content="WOMBAT 2026 is the annual data science and analytics workshop run by the Monash Business Analytics Team, 30 Nov – 1 Dec 2026 in Melbourne, Australia.">
+<meta name="twitter:image" content="https://wombat2026.numbat.space/img/opengraph-banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://wombat2026.numbat.space/">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-sm " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">WOMBAT</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./program/schedule"> 
+<span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">Contact</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="./participation/coc.html">
+ <span class="dropdown-text">Code of Conduct</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./about/committee">
+ <span class="dropdown-text">Organising Committee</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./participation/register.html"> 
+<span class="menu-text">Register</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./live.html"> 
+<span class="menu-text">Live Program</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+
+
+
+<!-- 
+Design inspiration:
+https://wif.nixtla.io/
+https://conf.posit.co/2026/
+-->
+<section id="wombat-2026" class="level1 hero">
+<h1>WOMBAT 2026</h1>
+<p><span class="hero-tagline"><strong>W</strong>orkshop <strong>O</strong>rganised by the <strong>M</strong>onash <strong>B</strong>usiness <strong>A</strong>nalytics <strong>T</strong>eam</span></p>
+<p><span class="hero-call">30 Nov – 1 Dec 2026 · Melbourne, Australia</span></p>
+<p><span class="hero-desc"><em>Learn and discuss open-source tools for business analytics and data science.</em></span></p>
+<div class="btn-group save-the-date-dropdown" role="group">
+  <a href="participation/register.html" id="hero-register-btn" class="btn btn-primary btn-lg" style="color: #3a2704; margin-right: 0.5rem; border-radius: 0.5rem">
+    Register
+  </a>
+  <a href="live.html" id="hero-live-btn" class="btn btn-lg btn-live" style="margin-right: 0.5rem; border-radius: 0.5rem">
+    <span class="live-dot"></span> Live Program
+  </a>
+  <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background: none; border-radius: 0.5rem">
+    Add to calendar
+  </button>
+  <ul class="dropdown-menu">
+    <li>
+      <a class="dropdown-item" id="cal-google" href="#" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 48 48" style="margin-right:.5em;vertical-align:-.2em"><path fill="#4285F4" d="M45.5 24.5c0-1.4-.1-2.7-.4-4H24v7.6h12.1c-.5 2.7-2.1 5-4.4 6.5v5.4h7.1c4.2-3.9 6.7-9.6 6.7-15.5z"></path><path fill="#34A853" d="M24 46c6.1 0 11.2-2 14.8-5.5l-7.1-5.4c-2 1.3-4.5 2.1-7.7 2.1-5.9 0-10.9-4-12.7-9.3H4v5.6C7.6 41.3 15.3 46 24 46z"></path><path fill="#FBBC04" d="M11.3 27.9c-.5-1.3-.7-2.6-.7-4s.3-2.7.7-4V14.3H4C2.4 17.4 1.5 20.6 1.5 24s.9 6.6 2.5 9.7l7.3-5.8z"></path><path fill="#EA4335" d="M24 10.7c3.3 0 6.3 1.1 8.6 3.4l6.4-6.4C35.2 4 29.8 2 24 2 15.3 2 7.6 6.7 4 14.3l7.3 5.6C13.1 14.7 18.1 10.7 24 10.7z"></path></svg>
+        Google Calendar
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" id="cal-outlook" href="#" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 48 48" style="margin-right:.5em;vertical-align:-.2em"><rect width="26" height="26" x="20" y="20" fill="#0078d4" rx="2"></rect><rect width="26" height="26" x="2" y="2" fill="#28a8e0" rx="2"></rect><path fill="#fff" d="M12 10c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 9c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"></path></svg>
+        Outlook (web)
+      </a>
+    </li>
+    <li><hr class="dropdown-divider"></li>
+    <li>
+      <a class="dropdown-item" id="cal-ical" href="#" download="WOMBAT-2026.ics">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16" style="margin-right:.5em;vertical-align:-.2em"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"></path></svg>
+        Apple Calendar (.ics)
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" id="cal-ics" href="#" download="WOMBAT-2026.ics">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewbox="0 0 16 16" style="margin-right:.5em;vertical-align:-.2em"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path></svg>
+        Download .ics
+      </a>
+    </li>
+  </ul>
+</div>
+
+<p class="hero-note">
+  <span class="hero-note-label">Note</span>
+  <em>There are two annual WOMBAT events, both in Melbourne, a week apart.<br>This one is about data analytics; the other is about mathematical optimisation.</em>
+  <em>It is unrelated to the <a href="https://wombat.mocao.org/" target="_blank" rel="noopener">Workshop on Optimisation, Metric Bounds, Approximation and Transversality</a>, the annual meeting organised by the MoCaO special interest group.</em>
+</p>
+
+<!-- Data / Calendar Script Provided by User -->
+<script>
+(function () {
+  var event = {
+    title:       'WOMBAT 2026',
+    description: 'Workshop Organised by the Monash Business Analytics Team. Learn and discuss open-source tools for business analytics and data science.',
+    location:    'Melbourne, Australia',
+    url:         'https://wombat2026.numbat.space',
+    startDate:   '20261130',   // YYYYMMDD (all-day)
+    endDate:     '20261202',   // iCal end is exclusive, so +1 day after last day
+    startDateHuman: '2026-11-30',
+    endDateHuman:   '2026-12-01'
+  };
+
+  var ics = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//WOMBAT 2026//EN',
+    'CALSCALE:GREGORIAN',
+    'METHOD:PUBLISH',
+    'BEGIN:VEVENT',
+    'UID:wombat-2026@numbat.space',
+    'DTSTAMP:' + new Date().toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z',
+    'DTSTART;VALUE=DATE:' + event.startDate,
+    'DTEND;VALUE=DATE:'   + event.endDate,
+    'SUMMARY:'      + event.title,
+    'DESCRIPTION:'  + event.description,
+    'LOCATION:'     + event.location,
+    'URL:'          + event.url,
+    'END:VEVENT',
+    'END:VCALENDAR'
+  ].join('\r\n');
+
+  var icsDataURI = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+
+  var googleURL = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+    '&text='     + encodeURIComponent(event.title) +
+    '&dates='    + event.startDate + '/' + event.endDate +
+    '&details='  + encodeURIComponent(event.description) +
+    '&location=' + encodeURIComponent(event.location) +
+    '&sprop=website:' + encodeURIComponent(event.url);
+
+  var outlookURL = 'https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent' +
+    '&subject='   + encodeURIComponent(event.title) +
+    '&startdt='   + event.startDateHuman +
+    '&enddt='     + event.endDateHuman +
+    '&body='      + encodeURIComponent(event.description) +
+    '&location='  + encodeURIComponent(event.location) +
+    '&allday=true';
+
+  document.getElementById('cal-google').href  = googleURL;
+  document.getElementById('cal-outlook').href = outlookURL;
+  document.getElementById('cal-ical').href    = icsDataURI;
+
+  // The Register → Live Schedule swap itself is handled by the shared
+  // body.event-live class from js/live-status.html (see css/hero.css),
+  // so the event dates only need to live in one place.
+})();
+</script>
+</section>
+<section id="keynote" class="level2">
+<h2 data-anchor-id="keynote">Keynote</h2>
+
+  <div class="keynote-card" id="keynote-card">
+    
+    <!-- Left/Top Column: Speaker Profile -->
+    <div class="profile-section">
+      <div class="avatar-wrapper">
+        <img src="img/keynote.jpg" alt="Rob J Hyndman" class="avatar">
+      </div>
+      <div class="speaker-info">
+        <h2 class="speaker-name" data-anchor-id="keynote">Rob J Hyndman</h2>
+        <p class="speaker-role">
+          <span class="highlight-title">Professor of Statistics</span><br>
+          Department of Econometrics and Business Statistics<br>
+          <span class="institution">Monash Business School</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right/Bottom Column: Topic, Abstract & Bio -->
+    <div class="content-section">
+      <div class="topic-header">
+        <h3 class="topic-title">Spotting the weird ones</h3>
+      </div>
+      
+      <!-- Abstract: Visible by Default -->
+      <div class="abstract-section">
+        <p>Data analysis is about finding the stories hidden in the mass of information that make up a data set. Usually we are interested in understanding the major patterns and the relationships that hold true for most of the data. But sometimes we need to look at the weird observations, the mavericks, the ones that don’t follow the crowd and behave differently. These observations are called <strong>‘anomalies’</strong>.</p>
+        <p>I will describe a principled statistical approach to identifying anomalies in diverse data sets, from simple numerical data to complex high-dimensional data objects. The ideas will be illustrated using the <code class="code-badge">{weird}</code> package for R applied to several data analysis problems, including spotting over-priced wines, identifying errors in the records of the Old Faithful Geyser, and uncovering forgotten epidemics in 19th century France.</p>
+      </div>
+
+      <!-- Toggle Trigger for Bio -->
+      <button class="expand-toggle" aria-expanded="false" aria-controls="bio-details">
+        <span class="toggle-text">Read bio</span>
+        <svg class="chevron-icon" viewbox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 9l6 6 6-6"></path></svg>
+      </button>
+
+      <!-- Folded Content: Collapsible Bio -->
+      <div class="folded-content" id="bio-details">
+        <div class="inner-scroll">
+          <div class="content-block">
+            <h4>About Rob J Hyndman</h4>
+            <p>Prof Hyndman holds the position of Vice-Chancellor’s Distinguished Professor of Statistics at Monash University, and is an internationally recognised expert in time series forecasting.</p>
+            <p>He is a prolific writer, having authored more than 200 research papers and five books in statistical science, and has won awards for his research, teaching, consulting, and graduate supervision.</p>
+            <p>His commitment to open research and teaching with open-source statistical software and online learning materials has had a major impact on the accessibility and practice of forecasting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const card = document.getElementById("keynote-card");
+  const toggleBtn = card.querySelector(".expand-toggle");
+  const foldedContent = card.querySelector(".folded-content");
+  const toggleText = card.querySelector(".toggle-text");
+
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = card.classList.toggle("is-expanded");
+    foldedContent.classList.toggle("open");
+    
+    // Update accessibility attributes & text contextually
+    toggleBtn.setAttribute("aria-expanded", isOpen);
+    toggleText.textContent = isOpen ? "Hide Bio" : "Read more";
+  });
+});
+</script>
+</section>
+<section id="program" class="level2">
+<h2 data-anchor-id="program">Program</h2>
+<div class="program">
+<div class="stat-strip">
+  <div class="stat"><b>2</b><span>Days</span></div>
+  <div class="stat"><b>8</b><span>Tutorials</span></div>
+  <div class="stat"><b>12</b><span>Talks</span></div>
+  <div class="stat"><b>21</b><span>Speakers</span></div>
+</div>
+<div class="day-heading"><span class="day-num">Day 1 Tutorials ·</span><span class="day-date">Mon 30 Nov</span><a href="https://events.humanitix.com/wombat-2026-day-1-tutorials" class="day-register" target="_blank" rel="noopener">Register for tutorials →</a></div>
+<div class="track-grid">
+<div class="track-card">
+<div class="track-head">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v12"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="6" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg></div>
+<section id="reproducibility" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="reproducibility">Reproducibility</h5>
+</section>
+</div>
+<div id="listing-home-d1-reproducibility" class="quarto-listing quarto-listing-container-custom">
+<div class="person-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/97P7PG.webp" alt="Nick Tierney" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Nick Tierney
+</div>
+<div class="person-title">
+A Gentle Introduction to Targets
+</div>
+</div>
+<div class="person-time">
+09:00 AM
+</div>
+<p><a href="./program/tutorials/SLTKXH.html" class="stretched-link" aria-label="Nick Tierney: A Gentle Introduction to Targets, 09:00 AM"></a></p>
+</div>
+<div class="person-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/9UW7JH.webp" alt="Michael Lydeamore" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Michael Lydeamore
+</div>
+<div class="person-title">
+Modern reproducibility practices for agentic analytics
+</div>
+</div>
+<div class="person-time">
+01:30 PM
+</div>
+<p><a href="./program/tutorials/YGAET3.html" class="stretched-link" aria-label="Michael Lydeamore: Modern reproducibility practices for agentic analytics, 01:30 PM"></a></p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+<div class="track-card">
+<div class="track-head">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22.5z"></path><path d="M4 4.5v16"></path></svg></div>
+<section id="publishing" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="publishing">Publishing</h5>
+</section>
+</div>
+<div id="listing-home-d1-publishing" class="quarto-listing quarto-listing-container-custom">
+<div class="person-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/N8BLXD.webp" alt="Cynthia Huang" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Cynthia Huang
+</div>
+<div class="person-title">
+Introduction to Publishing with Quarto
+</div>
+</div>
+<div class="person-time">
+09:00 AM
+</div>
+<p><a href="./program/tutorials/GH98C8.html" class="stretched-link" aria-label="Cynthia Huang: Introduction to Publishing with Quarto, 09:00 AM"></a></p>
+</div>
+<div class="person-row">
+<div class="avatar-slot">
+<div class="avatar-group">
+<p><img src="./img/speakers/HXZANU.webp" alt="Fonti Kar" class="avatar" loading="lazy"></p>
+<p><img src="./img/speakers/ZYA7T8.webp" alt="Dianne Cook" class="avatar avatar-overlap" loading="lazy"></p>
+</div>
+</div>
+<div class="person-main">
+<div class="person-name">
+Fonti Kar &amp; Dianne Cook
+</div>
+<div class="person-title">
+Publishing your software
+</div>
+</div>
+<div class="person-time">
+01:30 PM
+</div>
+<p><a href="./program/tutorials/3SLZLV.html" class="stretched-link" aria-label="Fonti Kar &amp; Dianne Cook: Publishing your software, 01:30 PM"></a></p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+<div class="track-card">
+<div class="track-head">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M12 20V4M20 20v-7"></path></svg></div>
+<section id="analysis" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="analysis">Analysis</h5>
+</section>
+</div>
+<div id="listing-home-d1-analysis" class="quarto-listing quarto-listing-container-custom">
+<div class="person-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/W8FBAS.webp" alt="Dean Marchiori" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Dean Marchiori
+</div>
+<div class="person-title">
+Surviving Survival Analysis: A Hands-On Introduction with R
+</div>
+</div>
+<div class="person-time">
+09:00 AM
+</div>
+<p><a href="./program/tutorials/CN3WGS.html" class="stretched-link" aria-label="Dean Marchiori: Surviving Survival Analysis: A Hands-On Introduction with R, 09:00 AM"></a></p>
+</div>
+<div class="person-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/LDX3EG.webp" alt="Mitchell O'Hara-Wild" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Mitchell O’Hara-Wild
+</div>
+<div class="person-title">
+Exploratory Time Series Analysis
+</div>
+</div>
+<div class="person-time">
+01:30 PM
+</div>
+<p><a href="./program/tutorials/EWFCQ8.html" class="stretched-link" aria-label="Mitchell O'Hara-Wild: Exploratory Time Series Analysis, 01:30 PM"></a></p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+<div class="track-card">
+<div class="track-head">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m8 6-5 6 5 6M16 6l5 6-5 6"></path></svg></div>
+<section id="development" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="development">Development</h5>
+</section>
+</div>
+<div id="listing-home-d1-development" class="quarto-listing quarto-listing-container-custom">
+<div class="person-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/LFYJLV.webp" alt="Tomasz Woźniak" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Tomasz Woźniak
+</div>
+<div class="person-title">
+Getting Started with C++ for Faster Forecasting in R
+</div>
+</div>
+<div class="person-time">
+09:00 AM
+</div>
+<p><a href="./program/tutorials/CUWXCY.html" class="stretched-link" aria-label="Tomasz Woźniak: Getting Started with C++ for Faster Forecasting in R, 09:00 AM"></a></p>
+</div>
+<div class="person-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/NFDCVB.webp" alt="Hadley Wickham" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Hadley Wickham
+</div>
+<div class="person-title">
+Modern package development with Positron + AI
+</div>
+</div>
+<div class="person-time">
+01:30 PM
+</div>
+<p><a href="./program/tutorials/HZ7WBW.html" class="stretched-link" aria-label="Hadley Wickham: Modern package development with Positron + AI, 01:30 PM"></a></p>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+</div>
+<div class="day-heading"><span class="day-num">Day 2 Workshop ·</span><span class="day-date">Tue 1 Dec</span><a href="https://events.humanitix.com/wombat-2026-day-2-workshop" class="day-register" target="_blank" rel="noopener">Register for main day →</a></div>
+<div class="day2-stack">
+<div class="day2-block">
+<div class="day2-label">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2 9 9l-7 1 5 5-1.5 7L12 18.5 18.5 22 17 15l5-5-7-1z"></path></svg></div>
+<section id="keynote-1" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="keynote-1">Keynote</h5>
+</section>
+</div>
+<!-- Hand-written, not a listing: this points back up to the Keynote
+     section already on this page rather than duplicating it, so it isn't
+     a good fit for the per-item listing templates below. Source:
+     program/workshops/DSBAZG.qmd -- keep the name/photo/time in sync with
+     that file if the keynote changes. -->
+<div class="people-row">
+  <a href="#keynote" class="person-card">
+    <div class="person-time">9:00 AM</div>
+    <div class="pc-row">
+      <div class="avatar-slot">
+        <img src="img/speakers/GVZWMX.webp" alt="Rob Hyndman" class="avatar" loading="lazy">
+      </div>
+      <div class="person-main">
+        <div class="person-name">Rob Hyndman</div>
+        <div class="person-title">Spotting the weird ones (details above)</div>
+      </div>
+    </div>
+  </a>
+</div>
+</div>
+<div class="day2-block">
+<div class="day2-label">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 17 9 9l4 4 8-10"></path><path d="M15 3h6v6"></path></svg></div>
+<section id="time-series" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="time-series">Time Series</h5>
+</section>
+</div>
+<div id="listing-home-d2-timeseries" class="quarto-listing quarto-listing-container-custom">
+<div class="people-row">
+<div class="person-card">
+<div class="person-time">
+10:30 AM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/LDX3EG.webp" alt="Mitchell O'Hara-Wild" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Mitchell O’Hara-Wild
+</div>
+<div class="person-title">
+mixtime: Temporal data for better analytics
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/CUT7T3.html" class="stretched-link" aria-label="Mitchell O'Hara-Wild: mixtime: Temporal data for better analytics, 10:30 AM"></a></p>
+</div>
+<div class="person-card">
+<div class="person-time">
+11:00 AM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/XYV8YH.webp" alt="Thiyanga Talagala" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Thiyanga Talagala
+</div>
+<div class="person-title">
+The Future of Animals is in Our Hands: My Role as a Data Scientist in Wildlife Conservation
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/LLGRVM.html" class="stretched-link" aria-label="Thiyanga Talagala: The Future of Animals is in Our Hands: My Role as a Data Scientist in Wildlife Conservation, 11:00 AM"></a></p>
+</div>
+<div class="person-card">
+<div class="person-time">
+11:30 AM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/YHXDLY.webp" alt="Shanika Wickramasuriya" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Shanika Wickramasuriya
+</div>
+<div class="person-title">
+Immutable by design: Trace-minimised forecasts for hierarchical time series
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/V3TNQS.html" class="stretched-link" aria-label="Shanika Wickramasuriya: Immutable by design: Trace-minimised forecasts for hierarchical time series, 11:30 AM"></a></p>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+<div class="day2-block">
+<div class="day2-label">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v3M12 18v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M3 12h3M18 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"></path><circle cx="12" cy="12" r="4"></circle></svg></div>
+<section id="showcase" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="showcase">Showcase</h5>
+</section>
+</div>
+<div id="listing-home-d2-showcase" class="quarto-listing quarto-listing-container-custom">
+<div class="people-row">
+<div class="person-card">
+<div class="person-time">
+01:00 PM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/XRXPCG.webp" alt="Priya Dingorkar" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Priya Dingorkar
+</div>
+<div class="person-title">
+How AI Is Used in My Job: From Data to Better Business Decisions
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/LDBUTX.html" class="stretched-link" aria-label="Priya Dingorkar: How AI Is Used in My Job: From Data to Better Business Decisions, 01:00 PM"></a></p>
+</div>
+<div class="person-card">
+<div class="person-time">
+01:10 PM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/T8R89U.webp" alt="Zola Batsaikhan" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Zola Batsaikhan
+</div>
+<div class="person-title">
+Using an LLM Wiki for project delivery
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/TDDWAC.html" class="stretched-link" aria-label="Zola Batsaikhan: Using an LLM Wiki for project delivery, 01:10 PM"></a></p>
+</div>
+<div class="person-card">
+<div class="person-time">
+01:20 PM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/QQRDPN.webp" alt="Jaffie Yang" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Jaffie Yang
+</div>
+<div class="person-title">
+TBC (Industry AI)
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/MNFGHE.html" class="stretched-link" aria-label="Jaffie Yang: TBC (Industry AI), 01:20 PM"></a></p>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+<div class="day2-block">
+<div class="day2-label">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-1L3 20l1-4.5A8.38 8.38 0 0 1 3.5 11 8.5 8.5 0 1 1 21 11.5z"></path></svg></div>
+<section id="conversation" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="conversation">Conversation</h5>
+</section>
+</div>
+<!-- Hand-written, not a listing: one session shared by a host and two
+     guests doesn't map onto the "one card per speaker" listing templates
+     below, so this panel is written out directly. Source:
+     program/workshops/GVZ9AP.qmd -- keep names/photos/time/roles in sync
+     with that file if the conversation's line-up changes. -->
+<div class="conv-panel">
+  <div class="person-time">1:30 PM</div>
+  <div class="conv-people">
+    <div class="conv-side conv-host">
+      <img src="img/speakers/N8BLXD.webp" alt="Cynthia Huang" class="avatar conv-avatar" loading="lazy">
+      <div>
+        <div class="person-name">Cynthia Huang</div>
+        <span class="conv-role host-role">Host</span>
+      </div>
+    </div>
+    <div class="conv-link" aria-hidden="true">
+      <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H9l-4 3v-3H5a2 2 0 0 1-2-2z"></path><path d="M21 11v3a2 2 0 0 1-2 2h-1v3l-3-3"></path></svg>
+      <span>with</span>
+    </div>
+    <div class="conv-side conv-guests">
+      <div class="avatar-group">
+        <img src="img/speakers/NFDCVB.webp" alt="Hadley Wickham" class="avatar conv-avatar" loading="lazy">
+        <img src="img/speakers/UZXXFD.webp" alt="Damjan Vukcevic" class="avatar conv-avatar avatar-overlap" loading="lazy">
+      </div>
+      <div>
+        <div class="person-name">Hadley Wickham &amp; Damjan Vukcevic</div>
+        <span class="conv-role guest-role">Guests</span>
+      </div>
+    </div>
+  </div>
+  <a href="program/workshops/GVZ9AP.html" class="stretched-link" aria-label="Cynthia Huang with Hadley Wickham &amp; Damjan Vukcevic: In conversation, 1:30 PM"></a>
+</div>
+</div>
+<div class="day2-block">
+<div class="day2-label">
+<div class="track-icon"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="7" width="10" height="10" rx="1.5"></rect><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.5 4.5l2 2M19.5 4.5l-2 2M4.5 19.5l2-2M19.5 19.5l-2-2"></path></svg></div>
+<section id="artificial-intelligence" class="level5 no-anchor">
+<h5 class="no-anchor" data-anchor-id="artificial-intelligence">Artificial Intelligence</h5>
+</section>
+</div>
+<div id="listing-home-d2-ai" class="quarto-listing quarto-listing-container-custom">
+<div class="people-row grid-2">
+<div class="person-card">
+<div class="person-time">
+03:00 PM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/HHDWB3.webp" alt="Maliny Po" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Maliny Po
+</div>
+<div class="person-title">
+TBC (Accessible AI)
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/KAMAAS.html" class="stretched-link" aria-label="Maliny Po: TBC (Accessible AI), 03:00 PM"></a></p>
+</div>
+<div class="person-card">
+<div class="person-time">
+03:15 PM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/8GXHNJ.webp" alt="Janith Wanniarachchi" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Janith Wanniarachchi
+</div>
+<div class="person-title">
+TBC (Accessible AI)
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/PXBGKN.html" class="stretched-link" aria-label="Janith Wanniarachchi: TBC (Accessible AI), 03:15 PM"></a></p>
+</div>
+<div class="person-card">
+<div class="person-time">
+03:30 PM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<p><img src="./img/speakers/7MMCTT.webp" alt="Yeasmin Khandakar" class="avatar" loading="lazy"></p>
+</div>
+<div class="person-main">
+<div class="person-name">
+Yeasmin Khandakar
+</div>
+<div class="person-title">
+TBC (Workplace AI)
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/TEFDRV.html" class="stretched-link" aria-label="Yeasmin Khandakar: TBC (Workplace AI), 03:30 PM"></a></p>
+</div>
+<div class="person-card">
+<div class="person-time">
+04:00 PM
+</div>
+<div class="pc-row">
+<div class="avatar-slot">
+<div class="avatar-group">
+<p><img src="./img/speakers/8QQEVH.webp" alt="Renée Rosillo" class="avatar" loading="lazy"></p>
+<p><img src="./img/speakers/VPUL9A.webp" alt="Azul Garza" class="avatar avatar-overlap" loading="lazy"></p>
+</div>
+</div>
+<div class="person-main">
+<div class="person-name">
+Renée Rosillo &amp; Azul Garza
+</div>
+<div class="person-title">
+From Idea to Production: Building an Agentic Forecasting Ecosystem in the Open
+</div>
+</div>
+</div>
+<p><a href="./program/workshops/WD3RU7.html" class="stretched-link" aria-label="Renée Rosillo &amp; Azul Garza: From Idea to Production: Building an Agentic Forecasting Ecosystem in the Open, 04:00 PM"></a></p>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</div>
+</div>
+<div class="program-cta">
+  <a href="program/schedule/" class="btn-program">View the full schedule →</a>
+</div>
+</div>
+<section class="community-section">
+    <h2>Community @ WOMBAT</h2>
+    <p class="community-desc">
+      WOMBAT isn't just about the talks. It's about the people in the room. <br>
+      Join the conversation between sessions and meet your fellow analysts.
+    </p>
+
+    <!-- Gallery Sub-section -->
+    <div class="gallery">
+      <img src="img/thank-you/IMG_4401.webp" alt="Community gathering moment 1" loading="lazy">
+      <img src="img/thank-you/IMG_4473.webp" alt="Community gathering moment 2" loading="lazy">
+      <img src="img/thank-you/IMG_4492.webp" alt="Community gathering moment 3" loading="lazy">
+      <img src="img/thank-you/IMG_4538.webp" alt="Community gathering moment 4" loading="lazy">
+      <img src="img/thank-you/IMG_4579.webp" alt="Community gathering moment 5" loading="lazy">
+      <img src="img/thank-you/IMG_4621.webp" alt="Community gathering moment 6" loading="lazy">
+      <img src="img/thank-you/IMG_4652.webp" alt="Community gathering moment 7" loading="lazy">
+      <img src="img/thank-you/IMG_4679.webp" alt="Community gathering moment 8" loading="lazy">
+      <img src="img/thank-you/IMG_4738.webp" alt="Community gathering moment 9" loading="lazy">
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".gallery img");
+
+  const observerOptions = {
+    root: null, // uses the viewport
+    rootMargin: "0px",
+    threshold: 0.15 // Triggers when 15% of the image is visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Scrolled IN view
+        entry.target.classList.add("is-visible");
+      } else {
+        // Scrolled OUT of view
+        entry.target.classList.remove("is-visible");
+      }
+    });
+  }, observerOptions);
+
+  images.forEach(img => observer.observe(img));
+});
+    </script>
+<section class="contact-section">
+    <h2>Got a question?</h2>
+    <p class="contact-desc">
+      Reach out to us with any question you have!
+    </p>
+    <a href="mailto:buseco-ebs.wombat@monash.edu" class="btn-primary">Send a message</a>
+  </section>
+<!-- 
+
+
+The annual WOMBAT workshop brings together analysts from academia, industry and government to learn and discuss open source tools for business analytics and data science.
+
+You should come if you are an analytics professional, lead a team of analysts, or develop open source tools.
+
+## Registration
+
+Registration for WOMBAT will open nearer to the event.
+
+Attendance will be limited to 20 participants (in-person and online) for each of the 8 tutorials on day 1, and 100 participants (in-person only) for day 2's workshop. We will also have a rich collection of hex stickers available for all to choose from to decorate your laptop.
+
+### Tutorials
+
+The WOMBAT tutorials offer practical, hands-on training in key topics for data analysis by experts in the field. Each tutorial includes three hours of content with a 30-minute catered tea break, offered in both morning (AM) and afternoon (PM) sessions.
+
+### Workshop
+
+The main day of WOMBAT features a diverse workshop program designed to highlight the latest data analysis tools and techniques. The workshop includes a keynote presentation, followed by invited talks from leading data analysts from academia, government, and industry. More details about the workshop will be shared nearer to the event.
+ -->
+
+
+
+</section>
+
+
+<!-- Privacy-friendly analytics by Plausible -->
+<script async="" src="https://track.mitchelloharawild.com/js/pa-iw-g6PWgTp9rlpB0DdQAM.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector(".hero");
+    const header = document.querySelector("#quarto-header");
+
+    if (!hero || !header) return;
+
+    document.body.classList.add("has-hero-navbar");
+
+    const updateState = () => {
+      const heroRect = hero.getBoundingClientRect();
+      document.body.classList.toggle(
+        "hero-navbar-scrolled",
+        heroRect.bottom <= 0,
+      );
+    };
+
+    updateState();
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(updateState, {
+        root: null,
+        threshold: 0,
+        rootMargin: "0px 0px -1px 0px",
+      });
+
+      observer.observe(hero);
+    } else {
+      window.addEventListener("scroll", updateState, { passive: true });
+      window.addEventListener("resize", updateState);
+    }
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
+
+    // SVG tile width (doubled for seamless looping animation).
+    // All sine frequencies are integers so the waveform tiles exactly.
+    const TILE = 2880;
+    const W = TILE * 2;
+    const H = 160;
+    const PTS = 500; // points per path — enough for smooth curves
+
+    function waveY(x, center, comps) {
+      return (
+        center +
+        comps.reduce(
+          (sum, [amp, freq, phase]) =>
+            sum + amp * Math.sin((2 * Math.PI * freq * x) / TILE + phase),
+          0,
+        )
+      );
+    }
+
+    // Build an SVG path string; optionally closed to y=H for a filled area.
+    function buildPath(center, comps, close) {
+      const parts = [];
+      for (let i = 0; i <= PTS; i++) {
+        const x = (i / PTS) * W;
+        const y = waveY(x, center, comps);
+        parts.push((i === 0 ? "M" : "L") + x.toFixed(1) + " " + y.toFixed(1));
+      }
+      if (close) parts.push(`L${W} ${H} L0 ${H} Z`);
+      return parts.join(" ");
+    }
+
+    const ns = "http://www.w3.org/2000/svg";
+
+    // Three wave layers at different depths and speeds.
+    // Components: [amplitude, integer-frequency, phase-offset]
+    const layers = [
+      {
+        // Slow background wave — wide swings, filled underbelly
+        center: H * 0.68,
+        comps: [
+          [38, 3, 0.5],
+          [18, 7, 1.2],
+          [10, 11, 2.0],
+          [6, 2, 0.3],
+        ],
+        fill: "rgba(160, 100, 5, 0.08)",
+        stroke: "rgba(140,  85, 5, 0.22)",
+        strokeWidth: "2",
+        speed: "48s",
+      },
+      {
+        // Mid wave — slightly faster, lighter fill
+        center: H * 0.58,
+        comps: [
+          [28, 4, 1.8],
+          [14, 9, 0.5],
+          [8, 14, 1.5],
+          [5, 2, 2.6],
+        ],
+        fill: "rgba(195, 135, 15, 0.06)",
+        stroke: "rgba(155,  95, 5, 0.14)",
+        strokeWidth: "1.5",
+        speed: "32s",
+      },
+      {
+        // Fast foreground detail line — small, tight oscillations, no fill
+        center: H * 0.76,
+        comps: [
+          [18, 5, 2.2],
+          [9, 12, 0.7],
+          [5, 19, 1.5],
+        ],
+        fill: "none",
+        stroke: "rgba(120,  68, 5, 0.11)",
+        strokeWidth: "1",
+        speed: "20s",
+      },
+    ];
+
+    layers.forEach((layer) => {
+      const svg = document.createElementNS(ns, "svg");
+      svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+      svg.setAttribute("preserveAspectRatio", "none");
+
+      if (layer.fill !== "none") {
+        const fillEl = document.createElementNS(ns, "path");
+        fillEl.setAttribute("d", buildPath(layer.center, layer.comps, true));
+        fillEl.setAttribute("fill", layer.fill);
+        fillEl.setAttribute("stroke", "none");
+        svg.appendChild(fillEl);
+      }
+
+      const strokeEl = document.createElementNS(ns, "path");
+      strokeEl.setAttribute("d", buildPath(layer.center, layer.comps, false));
+      strokeEl.setAttribute("fill", "none");
+      strokeEl.setAttribute("stroke", layer.stroke);
+      strokeEl.setAttribute("stroke-width", layer.strokeWidth);
+      svg.appendChild(strokeEl);
+
+      const wrap = document.createElement("div");
+      wrap.className = "hero-wave";
+      wrap.style.animationDuration = layer.speed;
+      wrap.setAttribute("aria-hidden", "true");
+      wrap.appendChild(svg);
+      hero.appendChild(wrap);
+    });
+  });
+</script>
+<script>
+(function () {
+  // Single source of truth for "is the event on today", used to reveal the
+  // Live Program navbar link (css/theme.scss) and, on the homepage, swap
+  // the hero's Register button for a Live Schedule one (css/hero.css).
+  var startDateHuman = '2026-11-30';
+  var endDateHuman = '2026-12-01';
+  var pad = function (n) { return String(n).padStart(2, '0'); };
+  var today = new Date();
+  var todayHuman = today.getFullYear() + '-' + pad(today.getMonth() + 1) + '-' + pad(today.getDate());
+  if (todayHuman >= startDateHuman && todayHuman <= endDateHuman) {
+    document.body.classList.add('event-live');
+  }
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/wombat2026\.numbat\.space");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Workshop Organised by the Monash Business Analytics Team</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://numbat.space">
+      <i class="bi bi-globe" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/numbats">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="mailto:buseco-ebs.wombat@monash.edu">
+      <i class="bi bi-envelope" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

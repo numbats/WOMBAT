@@ -1,0 +1,12 @@
+[submodule "2026"]
+	path = 2026
+	url = https://github.com/numbats/WOMBAT2026.git
+	branch = gh-pages
+[submodule "2025"]
+	path = 2025
+	url = https://github.com/numbats/WOMBAT2025.git
+	branch = gh-pages
+[submodule "2024"]
+	path = 2024
+	url = https://github.com/numbats/WOMBAT2024.git
+	branch = main
