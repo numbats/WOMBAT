@@ -55,9 +55,9 @@ changed. It runs on:
   workflow to add to an event repo, and the setup steps in its header
   (it needs a `WOMBAT_HUB_TOKEN` secret in that repo able to dispatch to
   this one -- not something this repo can set up on another repo's behalf).
-- **a schedule** (every 6 hours) -- a fallback poll, so things stay eventually
-  consistent even for a repo that isn't wired up to dispatch, or if a
-  dispatch is missed.
+- **a schedule** (weekly, every 168h) -- a fallback poll, so things stay
+  eventually consistent even for a repo that isn't wired up to dispatch, or
+  if a dispatch is missed.
 - **`workflow_dispatch`** -- for a manual run (`gh workflow run update-gh-pages.yml`).
 - **push to `main`** touching `wombat-events.yml` or the sync scripts -- so
   editing the config (e.g. bumping `active`) takes effect right away.

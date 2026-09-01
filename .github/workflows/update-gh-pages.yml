@@ -8,8 +8,8 @@ name: Update gh-pages aggregation
 #   - repository_dispatch from a source repo's own workflow, sent right
 #     after it pushes to its gh-pages (or main) branch. See
 #     docs/source-repo-workflow.yml for the workflow to add there.
-#   - a scheduled poll, as a fallback in case a dispatch is missed or a
-#     source repo hasn't been wired up to send one yet.
+#   - a scheduled poll (weekly), as a fallback in case a dispatch is missed
+#     or a source repo hasn't been wired up to send one yet.
 #   - workflow_dispatch, for a manual run.
 #   - push to main touching wombat-events.yml, so config changes (e.g.
 #     bumping `active`, adding a new year) take effect immediately.
@@ -17,7 +17,7 @@ on:
   repository_dispatch:
     types: [gh-pages-updated]
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 0 * * 0" # weekly (every 168h), Sunday 00:00 UTC
   workflow_dispatch: {}
   push:
     branches: [main]
