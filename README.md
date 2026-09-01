@@ -69,9 +69,30 @@ changed. It runs on:
 2. Merge to `main`. The workflow run this triggers adds the new submodule,
    drops the previous active year's root mirror, and republishes the new
    active year at root.
-3. Optionally add the [notify workflow](docs/source-repo-workflow.yml) to
-   the new event repo so it pushes updates to this hub immediately instead
-   of waiting for the next scheduled poll.
+3. Optionally wire up the new event repo to notify this hub immediately on
+   publish, instead of waiting for the next scheduled poll (see below).
+
+### Wiring up an event repo to notify the hub
+
+GitHub has no API for creating a personal access token -- it's only
+possible through the web UI -- so this is a one-time manual setup per event
+repo:
+
+1. Create a token able to dispatch to `numbats/WOMBAT`: go to
+   <https://github.com/settings/personal-access-tokens/new>, scope it to
+   **only** `numbats/WOMBAT` (Repository access -> "Only select
+   repositories"), with permission **Contents: Read and write**. (A classic
+   PAT with the `repo` scope also works, but is far broader than needed.)
+2. Add it as a secret named `WOMBAT_HUB_TOKEN` in the *event* repo (not this
+   one), e.g.:
+   ```sh
+   gh secret set WOMBAT_HUB_TOKEN --repo numbats/WOMBAT<YEAR>
+   ```
+   Paste the token when prompted -- this keeps it out of shell history and
+   any chat/log.
+3. Copy [`docs/source-repo-workflow.yml`](docs/source-repo-workflow.yml) to
+   `.github/workflows/notify-wombat-hub.yml` in the event repo (adjusting
+   `branches:` if it doesn't publish from `gh-pages`), and merge it.
 
 ## Local development
 

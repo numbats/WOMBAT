@@ -2,12 +2,16 @@
 #
 # Add this as .github/workflows/notify-wombat-hub.yml in the event repo so
 # that publishing to its gh-pages branch immediately tells numbats/WOMBAT to
-# resync (rather than waiting for the hub's ~6-hourly fallback poll).
+# resync (rather than waiting for the hub's weekly fallback poll).
 #
-# Setup (once per event repo):
-#   1. Create a token that can dispatch to numbats/WOMBAT -- a fine-grained
-#      PAT scoped only to that repo with "Contents: read and write" is
-#      enough. Classic PATs need the `repo` scope.
+# Setup (once per event repo -- see numbats/WOMBAT's README for the full
+# walkthrough this is condensed from):
+#   1. Create a token that can dispatch to numbats/WOMBAT. GitHub has no API
+#      for this -- it's web-UI-only: go to
+#      https://github.com/settings/personal-access-tokens/new and scope it
+#      to *only* numbats/WOMBAT (Repository access -> "Only select
+#      repositories"), permission Contents: Read and write. (A classic PAT
+#      with the `repo` scope also works, but is far broader than needed.)
 #   2. Add it as a secret named WOMBAT_HUB_TOKEN in *this* repo's settings
 #      (Settings -> Secrets and variables -> Actions), e.g.:
 #        gh secret set WOMBAT_HUB_TOKEN --repo numbats/WOMBAT2026
