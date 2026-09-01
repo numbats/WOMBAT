@@ -68,6 +68,10 @@ def main():
         "--exclude", "/.git",
         "--exclude", "/.gitmodules",
         "--exclude", "/.gitignore",
+        # The active year's own repo may carry its own CNAME (or none at
+        # all); the site root's CNAME must always stay wombat.numbat.space
+        # regardless, so it's excluded here and written explicitly below.
+        "--exclude", "/CNAME",
     ]
 
     subprocess.run(
@@ -82,6 +86,8 @@ def main():
             "not commit or push from this checkout -- restore it from a "
             "fresh checkout instead."
         )
+
+    pathlib.Path("CNAME").write_text("wombat.numbat.space")
 
     print(f"Published {active}/ to site root")
 
