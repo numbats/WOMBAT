@@ -22,3 +22,7 @@
 	path = 2016
 	url = https://github.com/numbats/WOMBAT2016.git
 	branch = gh-pages
+[submodule "2019"]
+	path = 2019
+	url = https://github.com/numbats/WOMBAT2019.git
+	branch = main
