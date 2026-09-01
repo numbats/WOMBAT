@@ -26,6 +26,10 @@ events:
     repo: numbats/WOMBAT2022
     # WOMBAT2022 publishes its site from `main` rather than `gh-pages`.
     branch: main
+  2019:
+    repo: numbats/WOMBAT2019
+    # WOMBAT2019 publishes its site from `main` rather than `gh-pages`.
+    branch: main
   2017:
     repo: numbats/WOMBAT2017
     branch: gh-pages
