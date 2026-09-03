@@ -72,6 +72,15 @@ def main():
         # all); the site root's CNAME must always stay wombat.numbat.space
         # regardless, so it's excluded here and written explicitly below.
         "--exclude", "/CNAME",
+        # An event repo may publish its own notify-wombat-hub workflow (see
+        # docs/source-repo-workflow.yml) to its gh-pages branch so that a
+        # push there is enough for GitHub to recognise and trigger it. That
+        # file has no meaning here and must not land in this repo's
+        # gh-pages branch: our commit/push step only has `contents: write`,
+        # and GitHub refuses any push that creates or modifies a
+        # `.github/workflows/*` file without the separate `workflows`
+        # permission.
+        "--exclude", "/.github/",
     ]
 
     subprocess.run(
